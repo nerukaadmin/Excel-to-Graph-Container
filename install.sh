@@ -32,4 +32,5 @@ echo For all "a"
 echo For team "t"
 read input </dev/tty
 docker run -v $(pwd):/excel ex_to_graph:v1 -e $input
+chmod -R 777 ./OUT/
 EOF
