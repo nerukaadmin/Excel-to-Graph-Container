@@ -12,6 +12,8 @@ curl https://raw.githubusercontent.com/nerukaadmin/Excel-to-Graph-Container/main
 echo ex_to_graph.py Pulled.
 curl https://raw.githubusercontent.com/nerukaadmin/Excel-to-Graph-Container/main/Dockerfile --output Dockerfile
 echo Dockerfile Pulled.
+curl https://raw.githubusercontent.com/nerukaadmin/Excel-to-Graph-Container/main/init --output init
+echo init Pulled.
 echo Cretaing DIR structure..!
 mkdir -p  OUT
 mkdir -p  IN
