@@ -31,6 +31,11 @@ echo Pass argumrnt for script....
 echo For all "a"
 echo For team "t"
 read input </dev/tty
-docker run -v $(pwd):/excel ex_to_graph:v1 -e $input
-chmod -R 777 ./OUT/
+if [ $input = "a" ]; then
+   docker run -v /home/neo/Desktop/Project_graph/dokcer_con:/excel ex_to_graph:v1
+else
+	docker run -v /home/neo/Desktop/Project_graph/dokcer_con:/excel ex_to_graph:v1 -e t  
+
+fi
+sudo chmod -R 777 ./OUT/*
 EOF
