@@ -22,6 +22,8 @@ chmod 777 -R tmp
 touch team_member_list.txt
 chmod 777 team_member_list.txt
 echo Installtion completed...!
+echo Docker Image build.
+docker build -t ex_to_graph:v1 .
 echo creating run.sh
 cat > run.sh <<EOF
 #!/bin/sh
@@ -29,6 +31,5 @@ echo Pass argumrnt for script....
 echo For all "a"
 echo For team "t"
 read input </dev/tty
-docker build -t ex_to_graph:v1 .
 docker run -v $(pwd):/excel ex_to_graph:v1 -e $input
 EOF
