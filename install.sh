@@ -16,9 +16,9 @@ echo Cretaing DIR structure..!
 mkdir -p  OUT
 mkdir -p  IN
 mkdir -p  tmp
-chmod 777 -R OUT
-chmod 777 -R IN
-chmod 777 -R tmp
+chmod  -R 777 OUT
+chmod  -R 777 IN
+chmod  -R 777 tmp
 touch team_member_list.txt
 chmod 777 team_member_list.txt
 echo Installtion completed...!

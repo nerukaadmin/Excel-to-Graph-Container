@@ -68,6 +68,7 @@ else:
 				ax.bar_label(bl, label_type="edge", padding=3,fontsize ='small')
 				plt.savefig(out_dir+plot_name+"-"+date+".png",bbox_inches='tight',dpi=500)
 			print("All anaysis reoprt created at %s",out_dir)
+			os.remove(tmp+date+"_interm.csv")
 			os.remove(tmp+date+"_total_interm.csv")
 			os.chmod(out_dir, 0o777)	
 		else:
