@@ -31,7 +31,7 @@ echo Pass argumrnt for script....
 echo For all "a"
 echo For team "t"
 read input </dev/tty
-if [ $input = "a" ]; then
+if [ "$input" = "a" ]; then
    docker run -v /home/neo/Desktop/Project_graph/dokcer_con:/excel ex_to_graph:v1
 else
 	docker run -v /home/neo/Desktop/Project_graph/dokcer_con:/excel ex_to_graph:v1 -e t  
