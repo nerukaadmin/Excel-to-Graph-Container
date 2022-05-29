@@ -37,5 +37,5 @@ else
 	docker run -v /home/neo/Desktop/Project_graph/dokcer_con:/excel ex_to_graph:v1 -e t  
 
 fi
-sudo chmod -R 777 ./OUT/*
+sudo chmod -R 777 OUT/
 EOF
