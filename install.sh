@@ -1,17 +1,18 @@
 #!/bin/sh
-echo Checking pip3..
-if pip3 --version ; then 
-	echo pip3 installed..
+echo Checking Docker..
+if docker --version ; then 
+	echo Docker installed..
 else
-	echo installing pip3..
-	sudo apt update
-	sudo apt install python3-pip
-	pip3 --version
+	echo install Docker..
+	echo please visit https://docs.docker.com/engine/install/ubuntu/
 fi
-curl https://raw.githubusercontent.com/nerukaadmin/Excel-to-Graph-/main/requirements.txt --output requirements.txt
-echo installing pip pacakges... 
-pip3 install -r requirements.txt
-curl https://raw.githubusercontent.com/nerukaadmin/Excel-to-Graph-/main/ex_to_graph.py --output ex_to_graph.py
+curl https://raw.githubusercontent.com/nerukaadmin/Excel-to-Graph-Container/main/requirements.txt --output requirements.txt
+echo requirements.txt Pulled.
+curl https://raw.githubusercontent.com/nerukaadmin/Excel-to-Graph-Container/main/ex_to_graph.py --output ex_to_graph.py
+echo ex_to_graph.py Pulled.
+curl https://raw.githubusercontent.com/nerukaadmin/Excel-to-Graph-Container/main/Dockerfile --output Dockerfile
+echo Dockerfile Pulled.
+echo Cretaing DIR structure..!
 mkdir -p  OUT
 mkdir -p  IN
 mkdir -p  tmp
@@ -28,5 +29,6 @@ echo Pass argumrnt for script....
 echo For all "a"
 echo For team "t"
 read input </dev/tty
-python3 ex_to_graph.py $input
+docker build -t ex_to_graph:v1 .
+docker run -v $(pwd):/excel ex_to_graph:v1 -e $input
 EOF
