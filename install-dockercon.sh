@@ -1,7 +1,7 @@
 !/bin/sh
 echo Checking Docker..
 if docker --version ; then 
-	pull nerukaneo/ex_to_graph:v1
+	docker pull nerukaneo/ex_to_graph:v1
 	curl https://raw.githubusercontent.com/nerukaadmin/Excel-to-Graph-Container/main/init --output init
 	echo init Pulled.
 	mkdir -p  OUT
