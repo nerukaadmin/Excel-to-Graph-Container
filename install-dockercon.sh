@@ -4,6 +4,8 @@ if docker --version ; then
 	docker pull nerukaneo/ex_to_graph:v1
 	curl https://raw.githubusercontent.com/nerukaadmin/Excel-to-Graph-Container/main/init-con --output init-con
 	echo init Pulled.
+	curl https://raw.githubusercontent.com/nerukaadmin/Excel-to-Graph-Container/main/ex_to_graph.py --output ex_to_graph.py
+	echo ex_to_graph.py Pulled.
 	mkdir -p  OUT
 	mkdir -p  IN
 	mkdir -p  tmp
