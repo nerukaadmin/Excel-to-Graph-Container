@@ -14,8 +14,8 @@ if docker --version ; then
 	chmod 777 team_member_list.txt
 	echo Folder stucture completed...!
 	echo creating run.sh
-	cat init > run.sh
-	rm init 
+	cat init-con > run.sh
+	rm init-con 
 else
 	echo install Docker..
 	echo please visit https://docs.docker.com/engine/install/ubuntu/
