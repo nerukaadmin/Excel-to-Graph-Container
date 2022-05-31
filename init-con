@@ -4,9 +4,19 @@ echo For all "a"
 echo For team "t"
 read input </dev/tty
 if [ "$input" = "a" ]; then
-   docker run -v $(pwd):/excel nerukaneo/ex_to_graph:v1
+   docker run \
+   -v $(pwd)/IN:/excel/IN \
+   -v $(pwd)/OUT:/excel/OUT \
+   -v $(pwd)/tmp:/excel/tmp \
+   -v $(pwd)/TM:/excel/TM \
+   nerukaneo/ex_to_graph:v1
 else
-	docker run -v $(pwd):/excel nerukaneo/ex_to_graph:v1 -e t  
+	docker run \
+   -v $(pwd)/IN:/excel/IN \
+   -v $(pwd)/OUT:/excel/OUT \
+   -v $(pwd)/tmp:/excel/tmp \
+   -v $(pwd)/TM:/excel/TM \
+   nerukaneo/ex_to_graph:v1 -e t
 
 fi
 sudo chmod -R 777 OUT/

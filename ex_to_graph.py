@@ -18,6 +18,7 @@ time=stamp.strftime("%X")
 path="./IN"
 out_path="./OUT/"
 tmp="./tmp/"
+tm_lst="./TM"
 files=os.listdir(path)
 files_xlsx = [i for i in files if i.endswith('.xlsx')]
 if len(files_xlsx) == 0 or len(files_xlsx) > 1:
@@ -95,7 +96,7 @@ else:
 			p4_fdp=fpd[fpd['Priority'] == '4 - Low']
 			p5_fdp=fpd[fpd['Priority'] == '5 - Planning']
 			df_list=[p1_fdp,p2_fdp,p3_fdp,p4_fdp,p5_fdp]
-			team=[line.rstrip('\n') for line in open('./team_member_list.txt','r')]
+			team=[line.rstrip('\n') for line in open(tm_lst+'/team_member_list.txt','r')]
 			if len(team) == 0:
 				print("Oops..! team_member_list.txt is Empty!")
 			else:	
